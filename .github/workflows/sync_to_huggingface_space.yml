@@ -1,3 +1,5 @@
+#https://huggingface.co/docs/hub/spaces-github-actions 
+#注意key的权限需要写
 name: Sync to Hugging Face hub
 on:
   push:
@@ -18,5 +20,4 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |-
-          echo $HF_TOKEN
           git push -f https://zhepama:$HF_TOKEN@huggingface.co/spaces/zhepama/lobechat main
